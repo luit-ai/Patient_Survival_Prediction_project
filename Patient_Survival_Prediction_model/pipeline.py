@@ -6,9 +6,9 @@ sys.path.append(str(root))
 
 from sklearn.pipeline import Pipeline
 
-from Patient_Survival_Prediction_model.config.core import config
-from Patient_Survival_Prediction_model.processing.features import Mapper
-from Patient_Survival_Prediction_model.processing.features import OutlierHandler
+from patient_survival_prediction_model.config.core import config
+from patient_survival_prediction_model.processing.features import Mapper
+from patient_survival_prediction_model.processing.features import OutlierHandler
 from xgboost import XGBClassifier
 
 patient_survival_prediction_pipe = Pipeline([

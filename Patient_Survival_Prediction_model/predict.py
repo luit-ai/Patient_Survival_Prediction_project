@@ -9,10 +9,10 @@ import pandas as pd
 import numpy as np
 import logging
 
-from Patient_Survival_Prediction_model import __version__ as _version
-from Patient_Survival_Prediction_model.config.core import config
-from Patient_Survival_Prediction_model.processing.data_manager import load_pipeline
-from Patient_Survival_Prediction_model.processing.validation import validate_inputs
+from patient_survival_prediction_model import __version__ as _version
+from patient_survival_prediction_model.config.core import config
+from patient_survival_prediction_model.processing.data_manager import load_pipeline
+from patient_survival_prediction_model.processing.validation import validate_inputs
 
 
 pipeline_file_name = f"{config.app_config.pipeline_save_file}{_version}.pkl"

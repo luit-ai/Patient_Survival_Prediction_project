@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 from pydantic import BaseModel, ValidationError
 
-from Patient_Survival_Prediction_model.config.core import config
+from patient_survival_prediction_model.config.core import config
 
 
 def validate_inputs(*, input_df: pd.DataFrame) -> Tuple[pd.DataFrame, Optional[dict]]:

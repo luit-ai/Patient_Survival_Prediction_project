@@ -11,8 +11,8 @@ import joblib
 import pandas as pd
 from sklearn.pipeline import Pipeline
 
-from Patient_Survival_Prediction_model import __version__ as _version
-from Patient_Survival_Prediction_model.config.core import DATASET_DIR, TRAINED_MODEL_DIR, config
+from patient_survival_prediction_model import __version__ as _version
+from patient_survival_prediction_model.config.core import DATASET_DIR, TRAINED_MODEL_DIR, config
 
 
 ##  Pre-Pipeline Preparation

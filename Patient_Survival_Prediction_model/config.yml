@@ -1,5 +1,5 @@
 # Package Overview
-package_name: Patient_Survival_Prediction_model
+package_name: patient_survival_prediction_model
 
 # Data Files
 training_data_file: heart_failure_clinical_records_dataset.csv
@@ -8,8 +8,8 @@ training_data_file: heart_failure_clinical_records_dataset.csv
 # The variable we are attempting to predict (cnt)
 target: DEATH_EVENT
 
-pipeline_name: Patient_Survival_Prediction_model
-pipeline_save_file: Patient_Survival_Prediction_model_output_v
+pipeline_name: patient_survival_prediction_model
+pipeline_save_file: patient_survival_prediction_model_output_v
 
 # Features that will go inside processing pipeline
 features:

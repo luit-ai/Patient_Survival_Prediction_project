@@ -8,9 +8,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 
-from Patient_Survival_Prediction_model.config.core import config
-from Patient_Survival_Prediction_model.pipeline import patient_survival_prediction_pipe
-from Patient_Survival_Prediction_model.processing.data_manager import load_dataset, save_pipeline
+from patient_survival_prediction_model.config.core import config
+from patient_survival_prediction_model.pipeline import patient_survival_prediction_pipe
+from patient_survival_prediction_model.processing.data_manager import load_dataset, save_pipeline
 
 def run_training() -> None:
     

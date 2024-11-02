@@ -2,7 +2,7 @@ from typing import Any, List, Optional
 import datetime
 
 from pydantic import BaseModel
-from Patient_Survival_prediction_model.processing.validation import DataInputSchema
+from patient_survival_prediction_model.processing.validation import DataInputSchema
 
 class PredictionResults(BaseModel):
     errors: Optional[Any]

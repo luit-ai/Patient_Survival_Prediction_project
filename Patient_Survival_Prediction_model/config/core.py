@@ -11,10 +11,10 @@ from typing import Dict, List
 from pydantic import BaseModel
 from strictyaml import YAML, load
 
-import Patient_Survival_Prediction_model
+import patient_survival_prediction_model
 
 # Project Directories
-PACKAGE_ROOT = Path(Patient_Survival_Prediction_model.__file__).resolve().parent
+PACKAGE_ROOT = Path(patient_survival_prediction_model.__file__).resolve().parent
 ROOT = PACKAGE_ROOT.parent
 CONFIG_FILE_PATH = PACKAGE_ROOT / "config.yml"
 #print(CONFIG_FILE_PATH)
