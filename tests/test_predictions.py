@@ -23,7 +23,7 @@ def test_make_prediction(sample_input_data):
     # Then
     predictions = result.get("predictions")
     assert isinstance(predictions, np.ndarray)
-    assert isinstance(predictions[0], np.float64)
+    assert isinstance(predictions[0], str)
     assert result.get("errors") is None
     assert len(predictions) == expected_num_of_predictions
     
