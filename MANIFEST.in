@@ -1,13 +1,13 @@
 include *.txt
 include *.md
 include *.pkl
-recursive-include ./bikeshare_model *
+recursive-include ./patient_survival_prediction_model *
 
-include bikeshare_model/datasets/bike-rental-dataset.csv
-include bikeshare_model/datasets/test.csv
-include bikeshare_model/trained_models/*.pkl
-include bikeshare_model/VERSION
-include bikeshare_model/config.yml
+include patient_survival_prediction_model/datasets/heart_failure_clinical_records_dataset.csv
+include patient_survival_prediction_model/datasets/test.csv
+include patient_survival_prediction_model/trained_models/*.pkl
+include patient_survival_prediction_model/VERSION
+include patient_survival_prediction_model/config.yml
 
 include ./requirements/requirements.txt
 include ./requirements/test_requirements.txt

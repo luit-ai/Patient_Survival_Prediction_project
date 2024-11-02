@@ -7,8 +7,8 @@ sys.path.append(str(root))
 import pytest
 from sklearn.model_selection import train_test_split
 
-from bikeshare_model.config.core import config
-from bikeshare_model.processing.data_manager import load_dataset
+from patient_survival_prediction_model.config.core import config
+from patient_survival_prediction_model.processing.data_manager import load_dataset
 
 
 @pytest.fixture
