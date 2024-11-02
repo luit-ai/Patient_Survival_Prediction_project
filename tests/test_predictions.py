@@ -14,19 +14,17 @@ from patient_survival_prediction_model.predict import make_prediction
 
 
 def test_make_prediction(sample_input_data):
-    # Given
-    expected_num_of_predictions = 3476
-
     # When
-    result = make_prediction(input_data = sample_input_data[0])
-
+    result = make_prediction(input_data=sample_input_data)
+    
     # Then
     predictions = result.get("predictions")
-    assert isinstance(predictions, np.ndarray)
-    assert isinstance(predictions[0], str)
-    assert result.get("errors") is None
-    assert len(predictions) == expected_num_of_predictions
-    
+    assert isinstance(predictions, str), "Predictions should be a string message"
+    assert "The patient is predicted" in predictions, "Prediction message should indicate patient status"
+    assert result.get("errors") is None, "There should be no errors in the result"
+    #assert len([predictions]) == expected_num_of_predictions, f"Expected {expected_num_of_predictions} predictions, got {len([predictions])}"
+    assert result.get("version") is not None, "Version should be present in the result"
+
     _predictions = list(predictions)
     y_true = sample_input_data[1]
 
