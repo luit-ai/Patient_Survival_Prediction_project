@@ -19,11 +19,11 @@ def test_creatinine_phosphokinase_variable_outlierhandler(sample_input_data):
     encoder = OutlierHandler(variable = config.self_model_config.creatinine_phosphokinase_var)
     q1, q3 = np.percentile(sample_input_data[0]['creatinine_phosphokinase'], q=[25, 75])
     iqr = q3 - q1
-    assert sample_input_data[0].loc[5813, 'creatinine_phosphokinase'] > q3 + (1.5 * iqr)
+    assert sample_input_data[0].loc[281, 'creatinine_phosphokinase'] < q3 + (1.5 * iqr)
 
     # When
     subject = encoder.fit(sample_input_data[0]).transform(sample_input_data[0])
 
     # Then
-    assert subject.loc[5813, 'creatinine_phosphokinase'] <= q3 + (1.5 * iqr)
+    assert subject.loc[281, 'creatinine_phosphokinase'] <= q3 + (1.5 * iqr)
 

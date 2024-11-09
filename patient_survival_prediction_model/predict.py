@@ -21,22 +21,24 @@ patient_survival_prediction_pipe = load_pipeline(file_name = pipeline_file_name)
 
 def make_prediction(*, input_data: Union[pd.DataFrame, dict]) -> dict:
     """Make a prediction using a saved model """
-    logging.basicConfig(filename="app.log", level=logging.DEBUG)
+    #logging.basicConfig(filename="app.log", level=logging.DEBUG)
+    
     try:
+        errors = None
         validated_data, errors = validate_inputs(input_df = pd.DataFrame(input_data))
         
         validated_data = validated_data.reindex(columns = config.self_model_config.features)
-        
-        results = {"predictions": None, "version": _version, "errors": errors}
-        
+
+        results = {"predictions": [], "version": _version, "errors": errors}
         if not errors:
             predictions = patient_survival_prediction_pipe.predict(validated_data)
-            if predictions == 1:
-                message = "The patient is predicted to have a death event."
-            else:
-                message =  "The patient is predicted to not have a death event."
-            results = {"predictions": message, "version": _version, "errors": errors}
-            print(results)
+            predictions_list = predictions.tolist()
+            for prediction_val in predictions_list: 
+                if prediction_val == 1:
+                    message = "The patient is predicted to have a death event."
+                else:
+                    message =  "The patient is predicted to not have a death event."
+                results["predictions"].append(message)
 
         return results
     except Exception as e:
