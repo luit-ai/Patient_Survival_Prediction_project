@@ -59,7 +59,9 @@ class OutlierHandler(BaseEstimator, TransformerMixin):
 
     def transform(self, X: pd.DataFrame) -> pd.DataFrame:
         X = X.copy()
-        
+        if X[self.variable].dtype != float: 
+            X[self.variable] = X[self.variable].astype(float)
+
         for i in X.index:
             if X.loc[i, self.variable] > self.upper_bound:
                 X.loc[i, self.variable]= self.upper_bound
